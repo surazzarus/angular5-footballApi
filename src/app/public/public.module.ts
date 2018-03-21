@@ -6,10 +6,12 @@ import { ResultsComponent } from './results/results.component';
 import { ClubsComponent } from './clubs/clubs.component';
 import { PublicComponent } from './public.component';
 import {FootballService} from '../core/services/football.service';
-import { PlayersComponent } from './clubs/players/players.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {SharedModule} from '../shared/shared.module';
 import {SearchClubPipe} from '../shared/pipes/search-club.pipe';
+import {ClubComponent} from './clubs/club/club.component';
+import {FixtureComponent} from './fixtures/fixture/fixture.component';
+import { ResultComponent } from './results/result/result.component';
 
 @NgModule({
   imports: [
@@ -20,10 +22,12 @@ import {SearchClubPipe} from '../shared/pipes/search-club.pipe';
   declarations: [
     HomeComponent,
     FixturesComponent,
+    FixtureComponent,
     ResultsComponent,
     ClubsComponent,
-    PlayersComponent,
-    SearchClubPipe
+    ClubComponent,
+    SearchClubPipe,
+    ResultComponent
   ],
   providers: [FootballService],
   bootstrap: [PublicComponent]

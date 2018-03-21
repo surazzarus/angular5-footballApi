@@ -1,0 +1,9 @@
+<div *ngIf="fixture.status !== 'FINISHED'">
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Date:</strong> {{fixture.date | date: 'MMM d (EEEE), y, h:mm a'}}</p>
+      <p><strong>{{fixture.homeTeamName}}</strong> VS <strong>{{fixture.awayTeamName}}</strong></p>
+    </div>
+  </div>
+</div>
+

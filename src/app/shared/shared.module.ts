@@ -4,7 +4,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ClubComponent } from './components/club/club.component';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -16,10 +15,9 @@ import {FormsModule} from '@angular/forms';
   exports: [
     NavbarComponent,
     FooterComponent,
-    ClubComponent,
     CommonModule,
     FormsModule
   ],
-  declarations: [NavbarComponent, FooterComponent, ClubComponent]
+  declarations: [NavbarComponent, FooterComponent]
 })
 export class SharedModule { }

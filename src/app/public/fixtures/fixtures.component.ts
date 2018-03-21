@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FootballService} from '../../core/services/football.service';
+import {Fixture} from '../../core/models/fixture';
 
 @Component({
   selector: 'app-fixtures',
@@ -7,10 +8,10 @@ import {FootballService} from '../../core/services/football.service';
   styleUrls: ['./fixtures.component.scss']
 })
 export class FixturesComponent implements OnInit {
-  fixtures;
+  fixtures: Fixture[];
   clubs;
-  status;
   today;
+  searchClub;
 
   constructor(private footballService: FootballService) { }
 
@@ -21,8 +22,7 @@ export class FixturesComponent implements OnInit {
       .subscribe((res: any) => {
         this.fixtures = res.fixtures;
         console.log(this.fixtures)
-        this.status = res.fixtures.status;
-        console.log(this.status);
+
       });
 
     const currentTime = new Date();

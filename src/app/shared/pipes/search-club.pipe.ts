@@ -11,7 +11,7 @@ export class SearchClubPipe implements PipeTransform {
     }
 
     return clubs.filter( club => {
-      return club.homeTeamName.toLowerCase().includes(searchClub.toLowerCase());
+      return club.homeTeamName.toLowerCase().includes(searchClub.toLowerCase()) || club.awayTeamName.toLowerCase().includes(searchClub.toLowerCase());
     });
   }
 
