@@ -1,3 +1,12 @@
-<p>
-  results works!
-</p>
+<div class="col-auto">
+  <div class="input-group mb-4">
+    <div class="input-group-prepend">
+      <div class="input-group-text">Search Club</div>
+    </div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" [(ngModel)]="searchClub">
+  </div>
+</div>
+
+<div class="row">
+  <app-result class="col-lg-4 col-md-6" *ngFor="let fixture of fixtures | searchClub: searchClub" [fixture]="fixture"></app-result>
+</div>

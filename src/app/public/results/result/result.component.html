@@ -1,0 +1,13 @@
+
+<div *ngIf="fixture.status === 'FINISHED'">
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Date:</strong> {{fixture.date | date: 'MMM d (EEEE), y, h:mm a'}}</p>
+      <p><span [ngClass]="fixture.result.goalsHomeTeam >= fixture.result.goalsAwayTeam ? 'green' : 'red'">{{fixture.homeTeamName}}</span>
+        VS
+        <span [ngClass]="fixture.result.goalsHomeTeam <= fixture.result.goalsAwayTeam ? 'green' : 'red'">{{fixture.awayTeamName}}</span>
+      </p>
+      <p><strong>Result:</strong> {{fixture.result.goalsHomeTeam}} - {{fixture.result.goalsAwayTeam}}</p>
+    </div>
+  </div>
+</div>
