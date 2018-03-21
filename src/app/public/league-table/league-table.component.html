@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Position</th>
+      <th>Club Name</th>
+      <th>Played</th>
+      <th>GD</th>
+      <th>Points</th>
+    </tr>
+    <tr *ngFor="let standing of standings; let i= index;" [ngClass]="{'greenBackground': i < 4, 'purpleBackground': (i >= 4 && i < 6), 'redBackground': i >= 17}">
+      <td>
+        <span>{{i+1}}</span>
+        <span><img width="25px" height="25px" src="{{standing.crestURI}}"></span>
+      </td>
+      <td>{{standing.teamName}}</td>
+      <td>{{standing.playedGames}}</td>
+      <td>{{standing.goalDifference}}</td>
+      <td>{{standing.points}}</td>
+    </tr>
+  </thead>
+</table>
+

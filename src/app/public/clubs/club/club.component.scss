@@ -1,5 +1,14 @@
 img {
-  height: 300px;
-  width: 100%;
   padding: 15px;
+  height: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    height: 300px;
+  }
+}
+
+.card {
+  min-height: 320px;
 }

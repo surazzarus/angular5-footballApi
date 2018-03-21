@@ -12,6 +12,7 @@ import {SearchClubPipe} from '../shared/pipes/search-club.pipe';
 import {ClubComponent} from './clubs/club/club.component';
 import {FixtureComponent} from './fixtures/fixture/fixture.component';
 import { ResultComponent } from './results/result/result.component';
+import { LeagueTableComponent } from './league-table/league-table.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { ResultComponent } from './results/result/result.component';
     ClubsComponent,
     ClubComponent,
     SearchClubPipe,
-    ResultComponent
+    ResultComponent,
+    LeagueTableComponent
   ],
   providers: [FootballService],
   bootstrap: [PublicComponent]

@@ -20,4 +20,8 @@ export class FootballService {
     return this.http.get(this.url + '/fixtures');
   }
 
+  getTable() {
+    return this.http.get(this.url + '/leagueTable');
+  }
+
 }

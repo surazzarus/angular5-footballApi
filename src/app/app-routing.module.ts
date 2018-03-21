@@ -5,6 +5,7 @@ import {HomeComponent} from './public/home/home.component';
 import {FixturesComponent} from './public/fixtures/fixtures.component';
 import {ResultsComponent} from './public/results/results.component';
 import {ClubsComponent} from './public/clubs/clubs.component';
+import {LeagueTableComponent} from './public/league-table/league-table.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,8 @@ const routes: Routes = [
       {path: 'home', component: HomeComponent},
       {path: 'fixtures', component: FixturesComponent},
       {path: 'results', component: ResultsComponent},
-      {path: 'clubs', component: ClubsComponent}
+      {path: 'clubs', component: ClubsComponent},
+      {path: 'table', component: LeagueTableComponent}
     ]
   }
 ];
