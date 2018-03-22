@@ -1,3 +1,16 @@
 img {
   cursor: pointer;
 }
+
+.blink {
+  animation: 1.5s blink step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #FFFFFF;
+  }
+}

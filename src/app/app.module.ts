@@ -14,7 +14,6 @@ import {PublicComponent} from './public/public.component';
 /* 3rd party library */
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {FootballService} from './core/services/football.service';
 import {TokenInterceptor} from './core/auth/token.interceptor';
 
 

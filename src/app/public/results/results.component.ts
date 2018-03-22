@@ -8,17 +8,18 @@ import {FootballService} from '../../core/services/football.service';
 })
 export class ResultsComponent implements OnInit {
   fixtures;
-  status: string;
+  loadingStatus: string;
+  updatedFixture: any;
 
   constructor(private footballService: FootballService) { }
 
   ngOnInit() {
-    this.status = 'loading';
+    this.loadingStatus = 'loading';
     this.footballService.getFixtures()
       .subscribe((res: any) => {
         console.log(res.fixtures)
         this.fixtures = res.fixtures;
-        this.status = 'active';
+        this.loadingStatus = 'active';
       });
   }
 
