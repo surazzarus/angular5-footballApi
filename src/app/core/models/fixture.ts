@@ -1,7 +1,7 @@
 export class Fixture {
-  public date: string;
-  public homeTeamName: string;
-  public awayTeamName: string;
-  public goalsHomeTeam: number;
-  public goalsAwayTeam: number;
+  date: string;
+  homeTeamName: string;
+  awayTeamName: string;
+  goalsHomeTeam: number;
+  goalsAwayTeam: number;
 }

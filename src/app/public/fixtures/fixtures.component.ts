@@ -8,26 +8,38 @@ import {Fixture} from '../../core/models/fixture';
   styleUrls: ['./fixtures.component.scss']
 })
 export class FixturesComponent implements OnInit {
-  fixtures: Fixture[];
+  fixtures: any;
   clubs;
-  today;
-  searchClub;
-  status;
+  loadingStatus: string;
+  filteredFixtures;
+  allFixtures: number;
+  show = 20;
 
   constructor(private footballService: FootballService) { }
 
   ngOnInit() {
-    this.status = 'loading';
+    // Initially the loading status is 'loading'
+    this.loadingStatus = 'loading';
     this.clubs = JSON.parse(localStorage.getItem('clubs'));
 
     this.footballService.getFixtures()
       .subscribe((res: any) => {
         this.fixtures = res.fixtures;
-        console.log(this.fixtures)
-        this.status = 'active';
-      });
 
-    const currentTime = new Date();
-    this.today = currentTime.setHours(0, 0, 0, 0);
+        // Change the loading status to active after all items are fetched
+        this.loadingStatus = 'active';
+
+        // Filter the items that are Not finished and postponed
+        this.filteredFixtures = this.fixtures.filter(item => {
+          return item.status !== 'FINISHED' && item.status !== 'POSTPONED';
+        });
+        // Get total fixtures
+        this.allFixtures = this.filteredFixtures.length;
+        console.log(this.filteredFixtures.length);
+      });
+  }
+
+  loadMore() {
+    this.show += 20;
   }
 }

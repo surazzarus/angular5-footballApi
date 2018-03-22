@@ -1,4 +1,4 @@
-<div [ngSwitch]='status'>
+<div [ngSwitch]='loadingStatus'>
   <div *ngSwitchCase="'loading'">
     <!-- all of the inline styles and massive SVG markup for my spinner -->
     <div class="loaderWrapper">
@@ -9,15 +9,17 @@
   </div>
 
   <div *ngSwitchCase="'active'" class="col-auto">
-    <div class="input-group mb-4">
-      <div class="input-group-prepend">
-        <div class="input-group-text">Search Club</div>
+      <div *ngFor="let fixture of filteredFixtures | slice:0:show">
+        <ul class="list-group">
+          <li class="list-group-item col-12 text-center">
+            <p>Date:<strong> {{fixture.date | date: 'MMM d (EEEE), y, h:mm a'}}</strong></p>
+            <p class="teams"><strong>{{fixture.homeTeamName}}</strong> VS <strong>{{fixture.awayTeamName}}</strong></p>
+          </li>
+        </ul>
       </div>
-      <input type="text" class="form-control" id="inlineFormInputGroup" [(ngModel)]="searchClub">
-    </div>
-  </div>
 
-  <div class="row">
-    <app-fixture class="col-12 text-center" *ngFor="let fixture of fixtures | searchClub: searchClub" [fixture]="fixture"></app-fixture>
+    <div class="text-center">
+      <img [hidden]="show >= allFixtures" src="assets/images/more.png" (click)="loadMore()" alt="">
+    </div>
   </div>
 </div>
