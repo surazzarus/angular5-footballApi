@@ -12,17 +12,19 @@ export class FixturesComponent implements OnInit {
   clubs;
   today;
   searchClub;
+  status;
 
   constructor(private footballService: FootballService) { }
 
   ngOnInit() {
+    this.status = 'loading';
     this.clubs = JSON.parse(localStorage.getItem('clubs'));
 
     this.footballService.getFixtures()
       .subscribe((res: any) => {
         this.fixtures = res.fixtures;
         console.log(this.fixtures)
-
+        this.status = 'active';
       });
 
     const currentTime = new Date();

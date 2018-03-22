@@ -1,12 +1,23 @@
-<div class="col-auto">
-  <div class="input-group mb-4">
-    <div class="input-group-prepend">
-      <div class="input-group-text">Search Club</div>
+<div [ngSwitch]='status'>
+  <div *ngSwitchCase="'loading'">
+    <!-- all of the inline styles and massive SVG markup for my spinner -->
+    <div class="loaderWrapper">
+      <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+      </svg>
     </div>
-    <input type="text" class="form-control" id="inlineFormInputGroup" [(ngModel)]="searchClub">
   </div>
-</div>
 
-<div class="row">
-  <app-fixture class="col-12 text-center" *ngFor="let fixture of fixtures | searchClub: searchClub" [fixture]="fixture"></app-fixture>
+  <div *ngSwitchCase="'active'" class="col-auto">
+    <div class="input-group mb-4">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Search Club</div>
+      </div>
+      <input type="text" class="form-control" id="inlineFormInputGroup" [(ngModel)]="searchClub">
+    </div>
+  </div>
+
+  <div class="row">
+    <app-fixture class="col-12 text-center" *ngFor="let fixture of fixtures | searchClub: searchClub" [fixture]="fixture"></app-fixture>
+  </div>
 </div>

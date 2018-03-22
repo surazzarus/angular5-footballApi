@@ -13,10 +13,10 @@ export class LeagueTableComponent implements OnInit {
 
   ngOnInit() {
     this.footballService.getTable()
-      .subscribe(res => {
+      .subscribe((res: any) => {
         console.log(res.standing)
         this.standings = res.standing;
-      })
+      });
   }
 
 }
