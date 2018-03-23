@@ -14,7 +14,9 @@ img {
 }
 
 h3 {
-  a {
-    color: #351045;
+  color: #351045;
+
+  &:hover {
+    color: #000000;
   }
 }
