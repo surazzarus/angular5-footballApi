@@ -9,6 +9,7 @@ import {FootballService} from '../../core/services/football.service';
 export class ResultsComponent implements OnInit {
   fixtures;
   loadingStatus: string;
+  searchClub: string;
   updatedFixture: any;
 
   constructor(private footballService: FootballService) { }
@@ -22,5 +23,4 @@ export class ResultsComponent implements OnInit {
         this.loadingStatus = 'active';
       });
   }
-
 }
