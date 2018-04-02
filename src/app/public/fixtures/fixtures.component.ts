@@ -8,10 +8,9 @@ import {Fixture} from '../../core/models/fixture';
   styleUrls: ['./fixtures.component.scss']
 })
 export class FixturesComponent implements OnInit {
-  fixtures: any;
-  clubs;
+  fixtures: Fixture[];
   loadingStatus: string;
-  filteredFixtures;
+  filteredFixtures: Fixture[];
   allFixtures: number;
   show = 20;
 
@@ -20,7 +19,6 @@ export class FixturesComponent implements OnInit {
   ngOnInit() {
     // Initially the loading status is 'loading'
     this.loadingStatus = 'loading';
-    this.clubs = JSON.parse(localStorage.getItem('clubs'));
 
     this.footballService.getFixtures()
       .subscribe((res: any) => {
